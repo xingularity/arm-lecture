@@ -33,13 +33,13 @@ fibonacci:
 	@ R5 = R0
     mov r5, r0
 	@ R0 = R4 - 2
-    sub r0, r4, #2
+    subs r0, r4, #2
 	@ Recursive call to fibonacci with R4 - 2 as parameter
     bl fibonacci
 
 
 	@ R0 = R5 + R0 (update flags)
-    add r0, r5
+    adds r0, r5
 
 	pop {r3, r4, r5, pc}		@EPILOG
 
