@@ -14,9 +14,9 @@ fibonacci:
 	push {r3, r4, r5, lr}
 
 	@ R4 = R0 - 0 (update flags)
-    subs r4, r0, #0
+    mov r4, r0
 	@ if(R0 <= 0) goto .L3 (which returns 0)
-    cmp r0, #0
+    cmp r4, #0
     ble .L3
 
 	@ Compare R4 wtih 1
