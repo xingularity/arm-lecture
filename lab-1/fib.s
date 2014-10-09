@@ -11,7 +11,8 @@
 fibonacci:
 	@ ADD/MODIFY CODE BELOW
 	@ PROLOG
-	push {r4, r5, lr}
+	@ push {r4, r5, lr}
+	stmdb sp!, {r4, r5, lr}
 
 	@ R4 = R0 - 0 (update flags)
     mov r4, r0
@@ -41,7 +42,8 @@ fibonacci:
 	@ R0 = R5 + R0 (update flags)
     adds r0, r5
 
-	pop {r4, r5, pc}		@EPILOG
+	@pop {r4, r5, pc}		@EPILOG
+	ldmia sp!, {r4, r5, pc}		@EPILOG
 
 	@ END CODE MODIFICATION
 .L3:
